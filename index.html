@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff4ea">
+<meta name="description" content="Любимой маме и бабушке Любови — поздравление с днём рождения от детей и внуков.">
+<title>Любовь ♡ С днём рождения, мама и бабушка!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="particles" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="monogram" href="#home" aria-label="К главной">Л ♡</a>
+  <nav class="main-nav" aria-label="Разделы сайта">
+    <a href="#home">Главная</a><a href="#wishes">Пожелания</a><a href="#cake">Торт</a><a href="#hearts">Сердечки</a><a href="#memories">Фотогалерея</a><a href="#letter">Письмо</a>
+  </nav>
+  <button class="music-control" id="musicBtn" type="button" aria-label="Включить музыку" aria-pressed="false"><span id="musicIcon">♫</span><span id="musicTitle">Включить песню</span><span class="music-signal" aria-hidden="true"><i></i><i></i><i></i></span></button>
+</header>
+<main>
+<section class="hero decorated" id="home" aria-labelledby="hero-title">
+  <img class="floral-edge floral-top-left" src="assets/flower-top-left.webp" alt="" aria-hidden="true">
+  <img class="floral-edge floral-top-right" src="assets/flower-top-right.webp" alt="" aria-hidden="true">
+  <div class="hero-glimmer" aria-hidden="true"></div>
+  <div class="hero-portrait"><img src="assets/hero.webp" alt="Любовь улыбается в светлой кофточке" fetchpriority="high"><span class="portrait-decoration">✿ ❀</span></div>
+  <div class="hero-copy"><div class="eyebrow"><span class="line"></span> 2 ноября 2026 года <span class="line"></span></div>
+    <h1 id="hero-title">Любовь<span class="name-heart">♡</span></h1>
+    <p class="hero-subtitle">НАША МАМА И БАБУШКА</p>
+    <p class="hero-greeting">С ДНЁМ РОЖДЕНИЯ!</p>
+    <span class="ornament">──── ♡ ────</span>
+    <p class="hero-verse">Ты — сердце нашей семьи,<br>источник тепла, заботы и бесконечной любви.<br>Спасибо, что ты всегда рядом!</p>
+    <a class="round-next" href="#wishes" aria-label="Перейти к пожеланиям">↓</a>
+  </div>
+  <div class="hero-bottom-flowers" aria-hidden="true">❀ &nbsp; 🌷 &nbsp; ❁ &nbsp; 🌸</div>
+</section>
+<section class="section wishes decorated" id="wishes" aria-labelledby="wishes-title">
+  <img class="floral-edge floral-side-left" src="assets/flower-mid-left.webp" alt="" aria-hidden="true">
+  <img class="floral-edge floral-side-right" src="assets/flower-mid-right.webp" alt="" aria-hidden="true">
+  <p class="eyebrow">Слова, которые идут от самого сердца</p>
+  <h2 id="wishes-title" class="script-heading">Пожелания от детей и внуков <span>♡</span></h2>
+  <p class="section-note">Нажми на фотографию — за ней скрываются наши тёплые слова.</p>
+  <div class="polaroid-grid" id="wishCards">
+    <button class="polaroid" data-wish="0" type="button"><span class="polaroid-img"><img src="assets/red.webp" alt="Любовь в красном наряде" loading="lazy"></span><span class="photo-heart">♥</span><span class="polaroid-caption">Спасибо за твою любовь</span><small>Нажми, чтобы открыть ♡</small></button>
+    <button class="polaroid" data-wish="1" type="button"><span class="polaroid-img"><img src="assets/flowers.webp" alt="Любовь в бордовом наряде" loading="lazy"></span><span class="photo-heart">♥</span><span class="polaroid-caption">Ты — наша опора</span><small>Нажми, чтобы открыть ♡</small></button>
+    <button class="polaroid" data-wish="2" type="button"><span class="polaroid-img"><img src="assets/light.webp" alt="Любовь в светлом свитере" loading="lazy"></span><span class="photo-heart">♥</span><span class="polaroid-caption">За твою доброту и заботу</span><small>Нажми, чтобы открыть ♡</small></button>
+    <button class="polaroid" data-wish="3" type="button"><span class="polaroid-img"><img src="assets/costume.webp" alt="Любовь в праздничном образе" loading="lazy"></span><span class="photo-heart">♥</span><span class="polaroid-caption">Спасибо за нашу семью</span><small>Нажми, чтобы открыть ♡</small></button>
+  </div>
+  <p class="photo-progress" id="photoProgress" aria-live="polite">Открой все четыре пожелания ♡</p>
+</section>
+<section class="cake-section decorated" id="cake" aria-labelledby="cake-title">
+  <div class="cake-ambient" aria-hidden="true">✦ &nbsp; ✧ &nbsp; ✦ &nbsp; ✧ &nbsp; ✦</div>
+  <div class="cake-layout">
+    <div class="cake-intro"><p class="eyebrow">Время загадать самое заветное</p><h2 id="cake-title" class="script-heading">Загадай<br>желание,<br>мамочка! <span>♡</span></h2><p>Нажми на свечу — и пусть твоё желание обязательно сбудется!</p><span class="curl-arrow" aria-hidden="true">⌣ ─────→</span></div>
+    <div class="cake-center"><div class="cake-stage" id="cakeStage">
+      <svg class="cake-illustration" viewBox="0 0 620 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Красивый праздничный торт со сливочным кремом, золотистой глазурью и розовыми цветами">
+        <defs>
+          <linearGradient id="cakeCream" x1="0" x2="1" y1="0" y2="0"><stop stop-color="#ddad8f"/><stop offset=".13" stop-color="#fff7e8"/><stop offset=".5" stop-color="#fffdf0"/><stop offset=".83" stop-color="#f7e2cc"/><stop offset="1" stop-color="#dba88b"/></linearGradient>
+          <linearGradient id="goldIcing" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fff1bc"/><stop offset=".45" stop-color="#d7a04c"/><stop offset="1" stop-color="#8f572d"/></linearGradient>
+          <radialGradient id="rosePink"><stop stop-color="#fff5ef"/><stop offset=".5" stop-color="#f6b2ad"/><stop offset="1" stop-color="#c66d76"/></radialGradient>
+          <radialGradient id="roseApricot"><stop stop-color="#fff9e5"/><stop offset=".57" stop-color="#ffccb6"/><stop offset="1" stop-color="#d99086"/></radialGradient>
+          <linearGradient id="leafGreen" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#b0b98d"/><stop offset="1" stop-color="#627d58"/></linearGradient>
+          <filter id="cakeShadow" x="-30%" y="-80%" width="160%" height="280%"><feGaussianBlur stdDeviation="12"/></filter>
+          <g id="rose" fill="url(#rosePink)" stroke="#b76e76" stroke-width="1.6">
+            <ellipse rx="18" ry="29" transform="translate(0,-15) rotate(-8)"/><ellipse rx="18" ry="29" transform="translate(18,-7) rotate(63)"/><ellipse rx="18" ry="29" transform="translate(17,16) rotate(125)"/><ellipse rx="18" ry="29" transform="translate(-14,16) rotate(205)"/><ellipse rx="18" ry="29" transform="translate(-18,-7) rotate(282)"/><circle r="18" fill="#f9d0c5"/><path d="M-12 2 Q-8-14 4-8 Q15-3 3 6 Q-8 14 -4 0 Q1-6 7 1" fill="none" stroke="#c1787d" stroke-width="3"/>
+          </g>
+          <g id="roseGold" fill="url(#roseApricot)" stroke="#dfaaa2" stroke-width="1.4"><ellipse rx="17" ry="25" transform="translate(0,-13) rotate(0)"/><ellipse rx="17" ry="25" transform="translate(13,4) rotate(73)"/><ellipse rx="17" ry="25" transform="translate(-13,5) rotate(145)"/><circle r="17" fill="#ffdbc8"/><path d="M-9 0Q-3-12 7-5Q13 7-2 7Q-9 3-1-3" fill="none" stroke="#d79591" stroke-width="2.5"/></g>
+          <g id="leaf"><path d="M0 0 Q-13-23 15-37 Q28-14 0 0" fill="url(#leafGreen)" stroke="#758b63" stroke-width="1.8"/><path d="M0 0L15-34" stroke="#e2d7b3" stroke-width="1.3"/></g>
+        </defs>
+        <ellipse cx="310" cy="428" rx="235" ry="21" fill="#a16e58" opacity=".16" filter="url(#cakeShadow)"/>
+        <ellipse cx="310" cy="398" rx="278" ry="40" fill="#c39470" opacity=".42"/><ellipse cx="310" cy="392" rx="271" ry="35" fill="#fff5e5" stroke="#c49b6c" stroke-width="7"/><ellipse cx="310" cy="387" rx="235" ry="28" fill="#f8eadc" stroke="#e2bc8d" stroke-width="2"/>
+        <path d="M108 219 L108 349 Q110 392 310 401 Q510 392 512 349 L512 219Z" fill="url(#cakeCream)" stroke="#e8c9b1" stroke-width="3"/>
+        <ellipse cx="310" cy="220" rx="202" ry="57" fill="#fff7e8" stroke="#dfb997" stroke-width="6"/>
+        <path d="M111 224C130 240 141 226 150 233C165 241 159 271 176 266C194 264 181 231 204 234C220 236 214 252 232 252C252 252 244 224 262 230C279 230 274 263 296 262C315 262 309 228 331 231C347 234 338 251 355 251C374 251 376 226 393 230C410 237 396 269 419 268C435 266 434 236 447 235C465 233 459 257 478 252C494 248 496 233 510 222" fill="none" stroke="url(#goldIcing)" stroke-width="10" stroke-linecap="round"/>
+        <g opacity=".8" fill="#d4a25c"><circle cx="144" cy="314" r="2.5"/><circle cx="187" cy="353" r="2"/><circle cx="229" cy="310" r="2.5"/><circle cx="378" cy="354" r="3"/><circle cx="444" cy="302" r="2.2"/><circle cx="475" cy="359" r="2"/></g>
+        <g transform="translate(310 310)"><path d="M-89-41Q0-65 89-41L85 50Q0 75-85 50Z" fill="#fff7ed" stroke="#d3a975" stroke-width="4"/><path d="M-92-39Q0-59 92-39" fill="none" stroke="#e5c79b" stroke-width="4"/><text y="-6" text-anchor="middle" font-size="24" font-family="Georgia" font-style="italic" fill="#934b48">С днём</text><text y="23" text-anchor="middle" font-size="24" font-family="Georgia" font-style="italic" fill="#934b48">рождения,</text><text y="51" text-anchor="middle" font-size="26" font-family="Georgia" font-style="italic" fill="#934b48">Любовь! ♡</text></g>
+        <g><use href="#leaf" transform="translate(111 224) scale(1.1) rotate(-70)"/><use href="#leaf" transform="translate(149 188) rotate(-30)"/><use href="#leaf" transform="translate(208 181) rotate(25)"/><use href="#leaf" transform="translate(390 174) rotate(-25)"/><use href="#leaf" transform="translate(485 220) rotate(65)"/><use href="#leaf" transform="translate(443 190) scale(1.2) rotate(30)"/><use href="#leaf" transform="translate(265 188) rotate(-45)"/><use href="#leaf" transform="translate(335 185) rotate(55)"/></g>
+        <g><use href="#rose" transform="translate(155 207) scale(.9)"/><use href="#roseGold" transform="translate(208 186) scale(1.05)"/><use href="#rose" transform="translate(263 200) scale(.87)"/><use href="#roseGold" transform="translate(350 197) scale(1.05)"/><use href="#rose" transform="translate(416 190) scale(.96)"/><use href="#roseGold" transform="translate(470 220) scale(.86)"/><use href="#roseGold" transform="translate(113 255) scale(.65)"/><use href="#rose" transform="translate(509 258) scale(.62)"/><use href="#roseGold" transform="translate(180 384) scale(.49)"/><use href="#rose" transform="translate(455 385) scale(.55)"/></g>
+        <g fill="#fffaf0"><circle cx="185" cy="228" r="5"/><circle cx="238" cy="221" r="4"/><circle cx="390" cy="220" r="5"/><circle cx="465" cy="253" r="3.5"/><circle cx="137" cy="259" r="4"/><circle cx="495" cy="239" r="4.5"/></g>
+        <g fill="#b9a077" opacity=".7"><circle cx="114" cy="198" r="3"/><circle cx="120" cy="181" r="2"/><circle cx="128" cy="168" r="2"/><circle cx="494" cy="179" r="2"/><circle cx="502" cy="166" r="3"/><circle cx="510" cy="154" r="2"/></g>
+      </svg>
+      <button class="candle-hit" type="button" id="candleButton" aria-label="Задуть свечу и загадать желание"><span class="candle-body"><i></i></span><span class="flame-wrap" id="flame"><span class="flame-halo"></span><span class="flame-outer"></span><span class="flame-inner"></span></span><span class="smoke" id="smoke" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+      <div class="cake-shine" aria-hidden="true">✦ ✧</div>
+    </div><button id="relight" class="outline-btn" type="button">Зажечь свечу снова ↻</button><p class="cake-status" id="cakeStatus" role="status">Свеча горит — загадывай желание ♡</p></div>
+    <aside class="wish-glass"><span>♡</span><p>Пусть в твоей жизни будет ещё больше счастливых дней, радостных событий и всего, о чём ты мечтаешь!</p><span>♡</span></aside>
+  </div>
+</section>
+<section class="section heart-section decorated" id="hearts" aria-labelledby="hearts-title">
+  <p class="eyebrow">Каждое сердечко — немного нашей любви</p>
+  <h2 id="hearts-title" class="script-heading">Сколько любви мы хотим тебе сказать...</h2>
+  <p class="section-note">Нажимай на сердечки — у каждого своё пожелание и свой маленький сюрприз!</p>
+  <div id="heartGrid" class="heart-grid"></div>
+  <div class="heart-message" id="heartMessage" aria-live="polite"><div class="message-symbol">♡</div><p id="heartMessageText">Выбери сердечко — и оно расскажет тебе что-то хорошее.</p></div>
+  <div class="heart-grand"><span>♡</span><span>Мы тебя<br>очень любим!</span><span>♡</span></div>
+</section>
+<section class="section memories decorated" id="memories" aria-labelledby="memories-title">
+  <img class="floral-edge floral-side-left" src="assets/flower-mid-left.webp" alt="" aria-hidden="true">
+  <img class="floral-edge floral-side-right" src="assets/flower-mid-right.webp" alt="" aria-hidden="true">
+  <p class="eyebrow">Моменты, которые всегда с нами</p><h2 class="script-heading" id="memories-title">Наши тёплые моменты ♡</h2>
+  <p class="section-note">Нажми на фотографию, чтобы рассмотреть поближе.</p>
+  <div class="memory-gallery">
+    <button type="button" data-photo="red-close.webp" data-alt="Любовь с памятной медалью"><img src="assets/red-close.webp" alt="Любовь с памятной медалью" loading="lazy"><span>♥</span></button>
+    <button type="button" data-photo="black-floral.webp" data-alt="Любовь в платье с цветочным узором"><img src="assets/black-floral.webp" alt="Любовь в платье с цветочным узором" loading="lazy"><span>♥</span></button>
+    <button type="button" data-photo="light.webp" data-alt="Любовь в светлой кофточке"><img src="assets/light.webp" alt="Любовь в светлой кофточке" loading="lazy"><span>♥</span></button>
+    <button type="button" data-photo="costume.webp" data-alt="Любовь в праздничном образе"><img src="assets/costume.webp" alt="Любовь в праздничном образе" loading="lazy"><span>♥</span></button>
+    <button type="button" data-photo="red.webp" data-alt="Любовь в красном наряде"><img src="assets/red.webp" alt="Любовь в красном наряде" loading="lazy"><span>♥</span></button>
+  </div>
+</section>
+<section class="letter-section decorated" id="letter" aria-labelledby="letter-title">
+  <img class="floral-edge floral-bottom-left" src="assets/flower-bottom-left.webp" alt="" aria-hidden="true">
+  <img class="floral-edge floral-bottom-right" src="assets/flower-bottom-right.webp" alt="" aria-hidden="true">
+  <div class="letter-paper"><div class="letter-seal">✉</div><p class="eyebrow">Самые важные слова — от всей семьи</p><h2 class="script-heading" id="letter-title">Письмо любимой маме и бабушке</h2>
+    <p>Наша родная, любимая мамочка и бабушка!</p>
+    <p>Сегодня твой день, и нам хочется сказать тебе самые важные слова. Ты — наше тепло, забота и любовь. Рядом с тобой всегда спокойно и уютно, а твоё доброе сердце всегда находит место для каждого из нас.</p>
+    <p>Мамочка, спасибо тебе за жизнь, за твоё терпение, мудрые советы, поддержку и бесконечную любовь. За то, что ты веришь в нас, переживаешь за нас и радуешься вместе с нами.</p>
+    <p>Для внуков ты — любимая бабушка, у которой всегда найдутся ласковое слово, добрая улыбка и самые тёплые объятия. С тобой даже простые моменты превращаются в счастливые воспоминания.</p>
+    <p>От всей души желаем тебе здоровья, душевного спокойствия, радости, исполнения желаний и долгих счастливых лет. Пусть тебя окружают любовь и забота, которые ты всегда так щедро даришь нам.</p>
+    <p class="letter-love">Мы тебя очень-очень любим!<br>Спасибо, что ты у нас есть. ♡</p>
+    <p class="letter-sign">С любовью, твои дети и внуки.</p>
+  </div>
+</section>
+<section class="finale decorated" aria-label="Финальное поздравление"><span class="small-star" aria-hidden="true">✧ ♡ ✧</span><p>Мамочка, бабушка, наша родная!</p><h2>Ты — сердце нашей семьи.</h2><div class="finale-heart">♡</div><strong>С любовью, твои дети и внуки.</strong><span class="final-date">2 ноября 2026 года</span></section>
+</main>
+<footer><span>Создано с любовью специально для Любови ♡</span><a href="#home">Наверх ↑</a></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true"><div class="modal-backdrop" id="modalBackdrop"></div><div class="modal-window" role="document"><button class="modal-close" type="button" id="modalClose" aria-label="Закрыть окно">×</button><img id="modalImg" src="assets/red.webp" alt="" hidden><span class="modal-ornament">✿ ♡ ✿</span><h2 id="modalTitle"></h2><p id="modalBody"></p><button type="button" class="outline-btn" id="modalOk">С любовью ♡</button></div></div>
+<audio id="birthdaySong" src="assets/music.mp3" preload="none" loop></audio>
+<script src="script.js" defer></script>
+</body>
+</html>
