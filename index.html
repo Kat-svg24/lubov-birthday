@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=family-20261031-2">
 </head>
 <body>
 <div id="particles" aria-hidden="true"></div>
@@ -99,14 +99,34 @@
   <img class="floral-edge floral-side-left" src="assets/flower-mid-left.webp" alt="" aria-hidden="true">
   <img class="floral-edge floral-side-right" src="assets/flower-mid-right.webp" alt="" aria-hidden="true">
   <p class="eyebrow">Моменты, которые всегда с нами</p><h2 class="script-heading" id="memories-title">Наши тёплые моменты ♡</h2>
-  <p class="section-note">Нажми на фотографию, чтобы рассмотреть поближе.</p>
-  <div class="memory-gallery">
-    <button type="button" data-photo="red-close.webp" data-alt="Любовь с памятной медалью"><img src="assets/red-close.webp" alt="Любовь с памятной медалью" loading="lazy"><span>♥</span></button>
-    <button type="button" data-photo="black-floral.webp" data-alt="Любовь в платье с цветочным узором"><img src="assets/black-floral.webp" alt="Любовь в платье с цветочным узором" loading="lazy"><span>♥</span></button>
-    <button type="button" data-photo="light.webp" data-alt="Любовь в светлой кофточке"><img src="assets/light.webp" alt="Любовь в светлой кофточке" loading="lazy"><span>♥</span></button>
-    <button type="button" data-photo="costume.webp" data-alt="Любовь в праздничном образе"><img src="assets/costume.webp" alt="Любовь в праздничном образе" loading="lazy"><span>♥</span></button>
-    <button type="button" data-photo="red.webp" data-alt="Любовь в красном наряде"><img src="assets/red.webp" alt="Любовь в красном наряде" loading="lazy"><span>♥</span></button>
+  <p class="section-note">Самое дорогое — быть рядом. Нажми на фото, чтобы увидеть его целиком и прочитать воспоминание.</p>
+  <div class="memory-gallery family-gallery">
+    <button class="family-card" type="button" data-photo="family-01.webp" data-title="Счастливые поездки" data-message="Вместе веселее: поездки, смех и незабываемые приключения." data-alt="Вся семья и дети в машине, вместе с собакой" aria-label="Открыть семейное фото 1: Счастливые поездки">
+      <span class="family-photo-wrap"><img src="assets/family-01.webp" alt="Вся семья и дети в машине, вместе с собакой" loading="eager" decoding="async"><span class="photo-glow" aria-hidden="true">✦</span></span>
+      <span class="family-caption">Счастливые поездки <span aria-hidden="true">♡</span></span>
+    </button>
+    <button class="family-card" type="button" data-photo="family-02.webp" data-title="Наши семейные встречи" data-message="Так хорошо собираться вместе, смеяться и делиться воспоминаниями." data-alt="Большая семья собралась вместе на праздник" aria-label="Открыть семейное фото 2: Наши семейные встречи">
+      <span class="family-photo-wrap"><img src="assets/family-02.webp" alt="Большая семья собралась вместе на праздник" loading="eager" decoding="async"><span class="photo-glow" aria-hidden="true">✦</span></span>
+      <span class="family-caption">Наши семейные встречи <span aria-hidden="true">♡</span></span>
+    </button>
+    <button class="family-card" type="button" data-photo="family-03.webp" data-title="Бабушкины объятия" data-message="Объятия и поцелуи внуков — моменты, наполненные самой искренней любовью." data-alt="Бабушку целуют двое маленьких детей" aria-label="Открыть семейное фото 3: Бабушкины объятия">
+      <span class="family-photo-wrap"><img src="assets/family-03.webp" alt="Бабушку целуют двое маленьких детей" loading="eager" decoding="async"><span class="photo-glow" aria-hidden="true">✦</span></span>
+      <span class="family-caption">Бабушкины объятия <span aria-hidden="true">♡</span></span>
+    </button>
+    <button class="family-card" type="button" data-photo="family-04.webp" data-title="Когда все рядом" data-message="Любовь семьи — в простых моментах, когда все рядом за одним столом." data-alt="Семейная фотография за общим столом" aria-label="Открыть семейное фото 4: Когда все рядом">
+      <span class="family-photo-wrap"><img src="assets/family-04.webp" alt="Семейная фотография за общим столом" loading="lazy" decoding="async"><span class="photo-glow" aria-hidden="true">✦</span></span>
+      <span class="family-caption">Когда все рядом <span aria-hidden="true">♡</span></span>
+    </button>
+    <button class="family-card" type="button" data-photo="family-05.webp" data-title="Счастье быть семьёй" data-message="Такие счастливые минуты навсегда остаются в наших сердцах." data-alt="Бабушка и дедушка с малышом на семейном празднике" aria-label="Открыть семейное фото 5: Счастье быть семьёй">
+      <span class="family-photo-wrap"><img src="assets/family-05.webp" alt="Бабушка и дедушка с малышом на семейном празднике" loading="lazy" decoding="async"><span class="photo-glow" aria-hidden="true">✦</span></span>
+      <span class="family-caption">Счастье быть семьёй <span aria-hidden="true">♡</span></span>
+    </button>
+    <button class="family-card" type="button" data-photo="family-06.webp" data-title="Связь поколений" data-message="Самое дорогое — наши родные люди и воспоминания, которые нас объединяют." data-alt="Совместный портрет нескольких поколений семьи" aria-label="Открыть семейное фото 6: Связь поколений">
+      <span class="family-photo-wrap"><img src="assets/family-06.webp" alt="Совместный портрет нескольких поколений семьи" loading="lazy" decoding="async"><span class="photo-glow" aria-hidden="true">✦</span></span>
+      <span class="family-caption">Связь поколений <span aria-hidden="true">♡</span></span>
+    </button>
   </div>
+  <p class="memories-finale">Счастье — это когда мы вместе. И пусть таких моментов будет ещё очень много! ♡</p>
 </section>
 <section class="letter-section decorated" id="letter" aria-labelledby="letter-title">
   <img class="floral-edge floral-bottom-left" src="assets/flower-bottom-left.webp" alt="" aria-hidden="true">
@@ -126,6 +146,6 @@
 <footer><span>Создано с любовью специально для Любови ♡</span><a href="#home">Наверх ↑</a></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true"><div class="modal-backdrop" id="modalBackdrop"></div><div class="modal-window" role="document"><button class="modal-close" type="button" id="modalClose" aria-label="Закрыть окно">×</button><img id="modalImg" src="assets/red.webp" alt="" hidden><span class="modal-ornament">✿ ♡ ✿</span><h2 id="modalTitle"></h2><p id="modalBody"></p><button type="button" class="outline-btn" id="modalOk">С любовью ♡</button></div></div>
 <audio id="birthdaySong" src="assets/music.mp3" preload="none" loop></audio>
-<script src="script.js" defer></script>
+<script src="script.js?v=family-20261031-2" defer></script>
 </body>
 </html>
