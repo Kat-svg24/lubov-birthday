@@ -37,7 +37,51 @@ document.getElementById('modalBackdrop').addEventListener('click',closeModal);
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeModal();if(event.key==='Tab'&&modal.classList.contains('active')){const els=Array.from(modal.querySelectorAll('button:not([disabled])'));const first=els[0],last=els[els.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
 const photoOpened=new Set();
 document.querySelectorAll('[data-wish]').forEach(button=>button.addEventListener('click',()=>{const id=Number(button.dataset.wish);photoOpened.add(id);const wish=photoWishes[id];openModal(wish.title,wish.body);document.getElementById('photoProgress').textContent=photoOpened.size===4?'Все четыре пожелания открыты! Обнимаем тебя, мамочка! ♡':`Открыто пожеланий: ${photoOpened.size} из 4 ♡`;}));
-document.querySelectorAll('[data-photo]').forEach(button=>button.addEventListener('click',()=>openModal(button.dataset.title || 'Наше прекрасное воспоминание',button.dataset.message || 'Любимые фотографии сохраняют самые тёплые моменты. Спасибо, что ты есть в нашей жизни! ♡',button.dataset.photo,button.dataset.alt)));
+const memoryGallery=document.querySelector('.memory-gallery');
+if(memoryGallery){
+  memoryGallery.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-photo]');
+    if(!button || !memoryGallery.contains(button))return;
+    openModal(button.dataset.title || 'Наше прекрасное воспоминание',button.dataset.message || 'Любимые фотографии сохраняют самые тёплые моменты. Спасибо, что ты есть в нашей жизни! ♡',button.dataset.photo,button.dataset.alt);
+  });
+  const familyPhotos=[
+    {name:'family-01.webp',title:'Счастливые поездки',message:'В дороге особенно весело, когда мы все вместе. Столько улыбок, смеха и дорогих сердцу моментов!'},
+    {name:'family-02.webp',title:'Наши семейные встречи',message:'Как хорошо собираться вместе, делиться историями и просто быть рядом друг с другом.'},
+    {name:'family-03.webp',title:'Любимые бабушкины объятия',message:'Самое большое счастье — обнимать бабушку и дарить ей поцелуи. Эти мгновения навсегда в наших сердцах.'},
+    {name:'family-04.webp',title:'Когда все рядом',message:'За одним столом собираются улыбки, смех, добрые слова и воспоминания, которые мы так бережём.'},
+    {name:'family-05.webp',title:'Счастье быть семьёй',message:'В этих счастливых улыбках — вся наша любовь, нежность и тепло нескольких поколений.'},
+    {name:'family-06.webp',title:'Связь поколений',message:'Самое ценное, что у нас есть, — наша семья, наша история и любовь, которая объединяет поколения.'}
+  ];
+  const checkPhoto=photo=>new Promise((resolve,reject)=>{
+    const img=new Image();
+    img.onload=()=>resolve(photo);
+    img.onerror=()=>reject(new Error('Фото не загружено: '+photo.name));
+    img.src='assets/'+photo.name;
+  });
+  // Keep the existing portraits until all new photos exist, then switch the gallery.
+  Promise.all(familyPhotos.map(checkPhoto)).then(photos=>{
+    memoryGallery.classList.add('family-gallery');
+    const cards=photos.map((photo,i)=>{
+      const button=document.createElement('button');button.type='button';button.className='family-card';
+      button.dataset.photo=photo.name;button.dataset.alt=photo.title;button.dataset.title=photo.title;button.dataset.message=photo.message;
+      button.setAttribute('aria-label','Открыть фото '+(i+1)+': '+photo.title);
+      const wrap=document.createElement('span');wrap.className='family-photo-wrap';
+      const img=document.createElement('img');img.src='assets/'+photo.name;img.alt=photo.title;img.loading='lazy';img.decoding='async';
+      const glow=document.createElement('span');glow.className='photo-glow';glow.setAttribute('aria-hidden','true');glow.textContent='✦';
+      wrap.append(img,glow);
+      const caption=document.createElement('span');caption.className='family-caption';caption.append(document.createTextNode(photo.title+' '));
+      const heart=document.createElement('span');heart.textContent='♡';heart.setAttribute('aria-hidden','true');caption.appendChild(heart);
+      button.append(wrap,caption);return button;
+    });
+    memoryGallery.replaceChildren(...cards);
+    document.querySelector('#memories .section-note').textContent='Самое дорогое — быть рядом. Нажми на фото, чтобы увидеть его целиком и прочитать воспоминание.';
+    if(!document.querySelector('.memories-finale')){
+      const finale=document.createElement('p');finale.className='memories-finale';
+      finale.textContent='Счастье — это когда мы вместе. И пусть таких моментов будет ещё очень много! ♡';
+      memoryGallery.after(finale);
+    }
+  }).catch(()=>{/* Family photos may not have been uploaded yet: keep current gallery. */});
+}
 const heartGrid=document.getElementById('heartGrid');
 heartWishes.forEach((item,i)=>{const b=document.createElement('button');b.type='button';b.className='wish-heart';b.dataset.id=String(i);b.setAttribute('aria-label',item.title+'. Открыть поздравление');const text=document.createElement('span');text.textContent=item.title;b.appendChild(text);heartGrid.appendChild(b)});
 const isReduced=window.matchMedia('(prefers-reduced-motion: reduce)');
